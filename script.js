@@ -1,7 +1,7 @@
 // Editable configuration for this temporary front page.
 const config = {
   siteName: 'spacecombat.gg',
-  siteLabel: 'Temporary Front Page',
+  siteLabel: 'Temporary front page, Website is in building stage',
 
   referralCode: 'STAR-9BBJ-ZKJV',
   referralUrl: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV',
@@ -10,13 +10,13 @@ const config = {
   themes: [
     { key: 'grimex', label: 'Grimex' },
     { key: 'pyro', label: 'Pyro' },
-    { key: 'avs', label: 'AVS' },
+    { key: 'stanton', label: 'Stanton' },
   ],
 
   // Hero copy.
-  heroHeadline: 'New Player, Start Smart.',
+  heroHeadline: 'Want to get into Star Citizen PvP? Start smart.',
   heroSubheadline:
-    'Use this referral code before account creation to start clean, stay bonus-eligible when applicable, and avoid the most common beginner miss.',
+    'This is a temporary front page while spacecombat.gg is being built into a full guided platform for Star Citizen PvP combat, meta, and doctrines.',
 
   // Conversion cards.
   benefits: [
@@ -37,11 +37,6 @@ const config = {
       text: 'It is easier to do this immediately than to realize it was missed later.',
     },
   ],
-
-  starterPack: {
-    name: 'Aurora MR / Mustang Alpha',
-    description: 'Best low-cost entry, fully playable, upgrade later.',
-  },
 
   tools: [
     {
@@ -65,38 +60,18 @@ const config = {
   ],
 
   orgs: [
-    { name: 'BlightVeil', url: 'https://robertsspaceindustries.com/en/orgs/BVL', description: 'PvP focused' },
-    {
-      name: 'Avenger Squadron',
-      url: 'https://robertsspaceindustries.com/en/orgs/AVSQN',
-      description: 'Combat-oriented',
-    },
-    { name: '388', url: 'https://robertsspaceindustries.com/en/orgs/388', description: 'Active group' },
-    { name: 'Shadow Moses', url: 'https://robertsspaceindustries.com/en/orgs/SHDWMSS', description: 'PvP focused' },
-    {
-      name: 'Sons of Ares',
-      url: 'https://robertsspaceindustries.com/en/orgs/ARESXHWLR',
-      description: 'Combat-oriented',
-    },
-    {
-      name: 'Shadowfox',
-      url: 'https://robertsspaceindustries.com/en/orgs/SHADOWFOX',
-      description: 'Good place to start looking',
-    },
+    { name: 'BlightVeil', url: 'https://robertsspaceindustries.com/en/orgs/BVL' },
+    { name: 'Avenger Squadron', url: 'https://robertsspaceindustries.com/en/orgs/AVSQN' },
+    { name: '388', url: 'https://robertsspaceindustries.com/en/orgs/388' },
+    { name: 'Shadow Moses', url: 'https://robertsspaceindustries.com/en/orgs/SHDWMSS' },
+    { name: 'Sons of Ares', url: 'https://robertsspaceindustries.com/en/orgs/ARESXHWLR' },
+    { name: 'Shadowfox', url: 'https://robertsspaceindustries.com/en/orgs/SHADOWFOX' },
   ],
 
   discords: [
-    { name: 'SC_PVP', url: 'https://discord.gg/x9r3ajnVcb', description: 'Community PvP hub' },
-    {
-      name: 'Grimex',
-      url: 'https://discord.gg/RJA6GPqjBG',
-      description: 'Active discussion and learning',
-    },
-    {
-      name: 'PvP Academy',
-      url: 'https://discord.gg/sS4YFyVPaU',
-      description: 'Useful place to meet players and improve',
-    },
+    { name: 'SC_PVP', url: 'https://discord.gg/x9r3ajnVcb' },
+    { name: 'Grimex', url: 'https://discord.gg/RJA6GPqjBG' },
+    { name: 'PvP Academy', url: 'https://discord.gg/sS4YFyVPaU' },
   ],
 
   opportunityTitle: 'Current Opportunity',
@@ -151,8 +126,9 @@ const config = {
 
   footerLinks: [
     { label: 'Quick Start', href: '#quick-start' },
+    { label: 'Community', href: '#community' },
     { label: 'FAQ', href: '#faq' },
-    { label: 'Create Account', href: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV' },
+    { label: 'Create RSI Account', href: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV' },
   ],
 };
 
@@ -169,8 +145,6 @@ function renderStaticText() {
 
   $('[data-hero-headline]').textContent = config.heroHeadline;
   $('[data-hero-subheadline]').textContent = config.heroSubheadline;
-  $('[data-starter-pack-name]').textContent = config.starterPack.name;
-  $('[data-starter-pack-description]').textContent = config.starterPack.description;
   $('[data-opportunity-title]').textContent = config.opportunityTitle;
   $('[data-opportunity-text]').textContent = config.opportunityText;
 }
@@ -180,6 +154,14 @@ function cardLink(item) {
     <a class="link-card" href="${item.url}" target="_blank" rel="noopener noreferrer">
       <strong>${item.name}</strong>
       <span>${item.description}</span>
+    </a>
+  `;
+}
+
+function cardLinkMinimal(item) {
+  return `
+    <a class="link-card" href="${item.url}" target="_blank" rel="noopener noreferrer">
+      <strong>${item.name}</strong>
     </a>
   `;
 }
@@ -197,8 +179,8 @@ function renderCollections() {
     .join('');
 
   $('[data-tools]').innerHTML = config.tools.map(cardLink).join('');
-  $('[data-orgs]').innerHTML = config.orgs.map(cardLink).join('');
-  $('[data-discords]').innerHTML = config.discords.map(cardLink).join('');
+  $('[data-orgs]').innerHTML = config.orgs.map(cardLinkMinimal).join('');
+  $('[data-discords]').innerHTML = config.discords.map(cardLinkMinimal).join('');
 
   $('[data-quick-path]').innerHTML = config.quickPath.map((step) => `<li>${step}</li>`).join('');
 
