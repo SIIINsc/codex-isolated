@@ -1,44 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SpaceCombat.gg — Star Citizen PvP Doctrine</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Citizen Referral Code | Bonus Signup Starter Page</title>
+    <meta
+      name="description"
+      content="Use this Star Citizen referral code during account creation to be bonus-eligible. Beginner-friendly quick start, starter pack guidance, and essential tools in one clean fan-made page."
+    />
+    <meta property="og:title" content="Star Citizen Referral Code Starter Page" />
+    <meta
+      property="og:description"
+      content="Create your Star Citizen account with an active referral code, follow a quick beginner path, and start with the right setup."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:site_name" content="Star Citizen Starter Referral" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="header-main">
-        <div id="headerContent"></div>
-        <div id="headerModeToggle" class="mode-toggle"></div>
-        <div class="header-controls">
-          <div class="header-actions">
-            <div class="theme-control">
-              <label for="themeSelect">Theme</label>
-              <select id="themeSelect"></select>
-            </div>
-            <button id="adminToggle" class="btn btn-outline" type="button">Edit</button>
-            <div class="status-pill" id="adminStatus">Viewer mode</div>
-          </div>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="top-bar" aria-label="Referral action bar">
+      <div class="top-bar__inner container">
+        <div class="top-bar__group">
+          <p class="top-bar__label">Active Referral Code</p>
+          <p class="top-bar__code" data-code-display>STAR-9BBJ-ZKJV</p>
+          <p class="top-bar__helper">Bonus eligible when used at signup</p>
         </div>
-      </div>
-      <div class="header-navs">
-        <nav class="page-nav" id="pageNav"></nav>
-        <div class="category-nav-band">
-          <nav class="category-nav" id="categoryNav"></nav>
-          <div id="headerSocials" class="header-socials"></div>
+
+        <div class="top-bar__actions">
+          <button class="btn btn--ghost" type="button" data-copy-btn>Copy Code</button>
+          <a class="btn btn--primary" data-referral-link href="#" target="_blank" rel="noopener noreferrer"
+            >Create Account</a
+          >
         </div>
       </div>
     </header>
 
-    <section id="adminBox" class="admin-box panel"></section>
+    <main id="main">
+      <section class="hero section">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container hero__grid">
+          <div class="hero__content reveal">
+            <p class="eyebrow">Star Citizen referral bonus starter page</p>
+            <h1 data-hero-headline>Start Star Citizen With a Bonus</h1>
+            <p class="hero__sub" data-hero-subheadline>
+              Use the referral code while creating your RSI account. This is the clean, beginner-first path to start correctly.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" data-referral-link href="#" target="_blank" rel="noopener noreferrer"
+                >Create Account With This Code</a
+              >
+              <button class="btn btn--ghost" type="button" data-copy-btn>Copy Code</button>
+            </div>
+            <p class="hero__trust">Independent Star Citizen starter page for new players.</p>
+          </div>
 
-    <main id="blocksContainer"></main>
+          <aside class="code-module reveal" aria-label="Active access code module">
+            <p class="code-module__label">Active access code</p>
+            <div class="code-module__frame">
+              <div class="scanline" aria-hidden="true"></div>
+              <p class="code-module__status" data-code-status>Initializing code sync...</p>
+              <p class="code-module__value" data-code-display>STAR-9BBJ-ZKJV</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Why Use a Star Citizen Referral Code First</h2>
+          <div class="card-grid card-grid--4 reveal">
+            <article class="panel card">
+              <h3>Signup Bonus Position</h3>
+              <p>Use the referral code during account creation to be in the right position for referral bonus eligibility.</p>
+            </article>
+            <article class="panel card">
+              <h3>Before Account Creation</h3>
+              <p>The referral field is part of signup flow, not a later setting. Handle it first, then continue smoothly.</p>
+            </article>
+            <article class="panel card">
+              <h3>Cleaner Start</h3>
+              <p>Set your account correctly now, then focus on choosing a starter pack and learning your ship basics.</p>
+            </article>
+            <article class="panel card">
+              <h3>Do It Now, Not Later</h3>
+              <p>Many new players forget this step. Doing it now is the simplest way to avoid a common beginner miss.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="quick-start">
+        <div class="container">
+          <h2>Quick Start, Do This First</h2>
+          <div class="quick-grid reveal">
+            <article class="panel quick-block quick-block--featured">
+              <h3>Best Starter Pack Right Now</h3>
+              <p class="quick-block__title" data-starter-pack-name></p>
+              <p data-starter-pack-description></p>
+              <p class="quick-block__hint">Start simple, upgrade later once you understand the game.</p>
+            </article>
+
+            <article class="panel quick-block">
+              <h3>Use These Tools, Essential</h3>
+              <div class="tool-grid" data-tools></div>
+              <p class="quick-support">
+                These tools are used by experienced players to optimize builds and understand ship performance.
+              </p>
+            </article>
+
+            <article class="panel quick-block">
+              <h3>Best PvP Orgs to Start With</h3>
+              <div class="org-grid" data-orgs></div>
+            </article>
+
+            <article class="panel quick-block">
+              <h3>Do This In Order</h3>
+              <ol class="path-list" data-quick-path></ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container narrow reveal">
+          <article class="panel opportunity">
+            <h2 data-opportunity-title>Current Opportunity</h2>
+            <p data-opportunity-text></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container reveal">
+          <h2>Why Star Citizen</h2>
+          <div class="card-grid card-grid--3">
+            <article class="panel card">
+              <h3>Ambitious Space Sim</h3>
+              <p>An evolving multiplayer universe with ships, stations, missions, and open-ended progression paths.</p>
+            </article>
+            <article class="panel card">
+              <h3>Immersive Scale</h3>
+              <p>From cockpit detail to planet-side travel, the experience is built around depth and player choice.</p>
+            </article>
+            <article class="panel card card--caution">
+              <h3>Important Reality</h3>
+              <p>Star Citizen is still in alpha and can be buggy or unstable. Start with realistic expectations and a basic package.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container narrow reveal">
+          <h2>Starter Advice</h2>
+          <div class="panel advice">
+            <ul>
+              <li>Start with a basic starter pack and learn the loops before spending more.</li>
+              <li>Use the referral code before finishing account creation.</li>
+              <li>Upgrade later once you know what you actually enjoy flying and doing.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container narrow reveal">
+          <h2>FAQ</h2>
+          <div class="faq" data-faq></div>
+        </div>
+      </section>
+
+      <section class="section final-cta">
+        <div class="container narrow reveal">
+          <article class="panel final-cta__panel">
+            <p class="eyebrow">Final step</p>
+            <h2>Create Your Account With the Active Referral Code</h2>
+            <p class="final-cta__code" data-code-display>STAR-9BBJ-ZKJV</p>
+            <div class="hero__actions">
+              <button class="btn btn--ghost" type="button" data-copy-btn>Copy Code</button>
+              <a class="btn btn--primary" data-referral-link href="#" target="_blank" rel="noopener noreferrer">Create Account</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
     <footer class="site-footer">
-      <div id="footerContent"></div>
+      <div class="container footer-grid">
+        <p>
+          Independent fan site. Not affiliated with Cloud Imperium Games or Roberts Space Industries.
+        </p>
+        <nav aria-label="Footer links" data-footer-links></nav>
+      </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
