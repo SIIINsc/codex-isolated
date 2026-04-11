@@ -6,7 +6,7 @@ const config = {
   referralCode: 'STAR-9BBJ-ZKJV',
   referralUrl: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV',
 
-  defaultTheme: 'grimex',
+  defaultTheme: 'stanton',
   themes: [
     { key: 'grimex', label: 'Grimex' },
     { key: 'pyro', label: 'Pyro' },
