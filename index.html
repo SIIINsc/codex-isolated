@@ -37,17 +37,10 @@
           <p class="brand-block__label" data-site-label>Full Star Citizen PvP guide under construction, coming soon.</p>
         </div>
 
-        <div class="header-controls">
-          <label class="theme-picker" for="themeSelect">
-            <span>Theme</span>
-            <select id="themeSelect" data-theme-select aria-label="Select site theme"></select>
-          </label>
-
-          <div class="ref-chip" aria-label="Active referral code controls">
-            <span class="ref-chip__code" data-code-display>STAR-9BBJ-ZKJV</span>
-            <button class="btn btn--ghost" type="button" data-copy-btn>Copy Code</button>
-            <a class="btn btn--primary" data-referral-link href="#" target="_blank" rel="noopener noreferrer">Create RSI Account</a>
-          </div>
+        <div class="ref-chip" aria-label="Active referral code controls">
+          <span class="ref-chip__code" data-code-display>STAR-9BBJ-ZKJV</span>
+          <button class="btn btn--ghost" type="button" data-copy-btn>Copy Code</button>
+          <a class="btn btn--primary" data-referral-link href="#" target="_blank" rel="noopener noreferrer">Create RSI Account</a>
         </div>
       </div>
     </header>
@@ -84,30 +77,41 @@
       <section class="section" id="quick-start">
         <div class="container reveal">
           <h2>Quick Start, Do This First</h2>
-          <p class="support-text" data-onboarding-intro></p>
-          <div class="grid grid--4" data-onboarding-steps></div>
+          <p class="support-text support-text--section" data-onboarding-intro></p>
+          <div class="grid grid--steps" data-onboarding-steps></div>
         </div>
       </section>
 
       <section class="section" id="tools">
         <div class="container reveal">
           <h2>Tools & Recommended Websites</h2>
-          <div class="grid grid--3" data-sites></div>
+          <p class="support-text support-text--section" data-tools-intro></p>
+          <div class="tools-layout">
+            <div class="grid grid--featured" data-sites-featured></div>
+            <div class="tool-category">
+              <h3>Economy & Progression</h3>
+              <div class="grid grid--tools" data-sites-economy></div>
+            </div>
+            <div class="tool-category">
+              <h3>Reference</h3>
+              <div class="grid grid--tools" data-sites-reference></div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section" id="community">
         <div class="container reveal">
           <h2>Community</h2>
-          <p class="support-text" data-community-intro></p>
-          <div class="grid grid--3" data-community-links></div>
+          <p class="support-text support-text--section" data-community-intro></p>
+          <div class="grid grid--community" data-community-links></div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--separated">
         <div class="container reveal">
           <h2>Why Star Citizen</h2>
-          <div class="grid grid--3" data-why-cards></div>
+          <div class="grid grid--why" data-why-cards></div>
         </div>
       </section>
 
