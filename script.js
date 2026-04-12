@@ -1,7 +1,7 @@
 // Editable configuration for this temporary front page.
 const config = {
   siteName: 'spacecombat.gg',
-  siteLabel: 'Temporary front page, Website is in building stage',
+  siteLabel: 'Full Star Citizen PvP guide under construction, coming soon.',
 
   referralCode: 'STAR-9BBJ-ZKJV',
   referralUrl: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV',
@@ -15,30 +15,42 @@ const config = {
 
   // Hero copy.
   heroHeadline: 'Want to get into Star Citizen PvP? Start smart.',
-  heroSubheadline:
-    'This is a temporary front page while spacecombat.gg is being built into a full guided platform for Star Citizen PvP combat, meta, and doctrines.',
+  heroSubheadline: 'Use the referral step before account creation, then follow the action path below.',
 
-  // Conversion cards.
-  benefits: [
+  onboardingIntro:
+    'Why this referral step matters: using the referral code first keeps your account setup in the correct referral path before signup. Follow these actions in order.',
+
+  onboardingSteps: [
     {
-      title: 'Referral Step First',
-      text: 'This should be done before you create the account, not after.',
+      title: 'Create account',
+      url: 'https://robertsspaceindustries.com/en/enlist?jumpto=%2Fen%2Fstar-citizen%2Fplay-star-citizen',
     },
     {
-      title: 'Bonus-Eligible Setup',
-      text: 'Using a referral code places your signup in the right referral path.',
+      title: 'Get a starter package',
+      url: 'https://robertsspaceindustries.com/en/store/pledge/browse/game-packages',
     },
     {
-      title: 'Cleaner Onboarding',
-      text: 'Handle account setup now so your first sessions are focused on learning.',
+      title: 'Join active community and find the right organisation for you',
     },
     {
-      title: 'Better Now Than Later',
-      text: 'It is easier to do this immediately than to realize it was missed later.',
+      title: 'Join an organisation',
+      url: 'https://robertsspaceindustries.com/en/community/orgs',
     },
   ],
 
-  tools: [
+  communityIntro:
+    'Find active players, PvP communities, official channels, and organisations to run with regularly.',
+
+  communityLinks: [
+    { name: 'SC_PVP', url: 'https://discord.gg/x9r3ajnVcb' },
+    { name: 'Grimex', url: 'https://discord.gg/RJA6GPqjBG' },
+    { name: 'PvP Academy', url: 'https://discord.gg/sS4YFyVPaU' },
+    { name: 'Star Citizen Official Discord', url: 'https://discord.gg/starcitizen' },
+    { name: 'Star Citizen Pipe Line and Front Line Info', url: 'https://discord.gg/nfYaXDhj' },
+    { name: 'Star Citizen Esports Community', url: 'https://discord.gg/atmoesports' },
+  ],
+
+  recommendedSites: [
     {
       name: 'Erkul',
       url: 'https://www.erkul.games/live/calculator',
@@ -49,34 +61,27 @@ const config = {
       url: 'https://www.spviewer.eu/',
       description: 'Ship stats, signatures, comparisons',
     },
+    {
+      name: 'Star Citizen Wiki',
+      url: 'https://starcitizen.tools/',
+      description: 'General game knowledge and reference',
+    },
+    {
+      name: 'Star Citizen Mining Helper Tool',
+      url: 'https://regolith.rocks/',
+      description: 'Mining helper and resource tool',
+    },
+    {
+      name: 'Star Citizen aUEC Trading Platform',
+      url: 'https://uexcorp.space/',
+      description: 'Trading, commodities, routes and economy tools',
+    },
+    {
+      name: 'Star Citizen Money Saving Guide and CCU Game',
+      url: 'https://ccugame.app/your-items/fleet',
+      description: 'Fleet saving strategy and CCU planning',
+    },
   ],
-
-  quickPath: [
-    'Copy the referral code',
-    'Create your RSI account',
-    'Choose a starter pack',
-    'Learn your ship with Erkul and SPViewer',
-    'Join a PvP group or community',
-  ],
-
-  orgs: [
-    { name: 'BlightVeil', url: 'https://robertsspaceindustries.com/en/orgs/BVL' },
-    { name: 'Avenger Squadron', url: 'https://robertsspaceindustries.com/en/orgs/AVSQN' },
-    { name: '388', url: 'https://robertsspaceindustries.com/en/orgs/388' },
-    { name: 'Shadow Moses', url: 'https://robertsspaceindustries.com/en/orgs/SHDWMSS' },
-    { name: 'Sons of Ares', url: 'https://robertsspaceindustries.com/en/orgs/ARESXHWLR' },
-    { name: 'Shadowfox', url: 'https://robertsspaceindustries.com/en/orgs/SHADOWFOX' },
-  ],
-
-  discords: [
-    { name: 'SC_PVP', url: 'https://discord.gg/x9r3ajnVcb' },
-    { name: 'Grimex', url: 'https://discord.gg/RJA6GPqjBG' },
-    { name: 'PvP Academy', url: 'https://discord.gg/sS4YFyVPaU' },
-  ],
-
-  opportunityTitle: 'Current Opportunity',
-  opportunityText:
-    'Star Citizen regularly rotates events, free-fly windows, and referral activity. Getting your account setup right before creation keeps you ready for those windows instead of missing them.',
 
   whyCards: [
     {
@@ -115,17 +120,18 @@ const config = {
       a: 'No, it is still in alpha and actively evolving.',
     },
     {
-      q: 'Why use Erkul and SPViewer?',
-      a: 'They help you compare ships, understand signatures, and build loadouts with far less guesswork.',
+      q: 'Why use these external tools?',
+      a: 'They help with build planning, ship comparisons, economy routes, and faster decisions with less guesswork.',
     },
     {
       q: 'Where do I find PvP players?',
-      a: 'Use the org and Discord links on this page to connect with active combat-focused groups and learning communities.',
+      a: 'Use the community links on this page to connect with active combat-focused groups and learning communities.',
     },
   ],
 
   footerLinks: [
     { label: 'Quick Start', href: '#quick-start' },
+    { label: 'Tools', href: '#tools' },
     { label: 'Community', href: '#community' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Create RSI Account', href: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV' },
@@ -145,8 +151,8 @@ function renderStaticText() {
 
   $('[data-hero-headline]').textContent = config.heroHeadline;
   $('[data-hero-subheadline]').textContent = config.heroSubheadline;
-  $('[data-opportunity-title]').textContent = config.opportunityTitle;
-  $('[data-opportunity-text]').textContent = config.opportunityText;
+  $('[data-onboarding-intro]').textContent = config.onboardingIntro;
+  $('[data-community-intro]').textContent = config.communityIntro;
 }
 
 function cardLink(item) {
@@ -166,23 +172,32 @@ function cardLinkMinimal(item) {
   `;
 }
 
+function onboardingCard(step, index) {
+  const body = `
+    <span class="step-card__index">Step ${index + 1}</span>
+    <span class="step-card__title">${step.title}</span>
+    ${step.url ? '<span class="step-card__hint">Open link</span>' : '<span class="step-card__hint">Continue after the first two steps</span>'}
+  `;
+
+  if (step.url) {
+    return `
+      <a class="step-card" href="${step.url}" target="_blank" rel="noopener noreferrer">
+        ${body}
+      </a>
+    `;
+  }
+
+  return `
+    <article class="step-card" aria-label="Step ${index + 1}">
+      ${body}
+    </article>
+  `;
+}
+
 function renderCollections() {
-  $('[data-benefits]').innerHTML = config.benefits
-    .map(
-      (item) => `
-      <article class="panel content-card">
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-      </article>
-    `
-    )
-    .join('');
-
-  $('[data-tools]').innerHTML = config.tools.map(cardLink).join('');
-  $('[data-orgs]').innerHTML = config.orgs.map(cardLinkMinimal).join('');
-  $('[data-discords]').innerHTML = config.discords.map(cardLinkMinimal).join('');
-
-  $('[data-quick-path]').innerHTML = config.quickPath.map((step) => `<li>${step}</li>`).join('');
+  $('[data-onboarding-steps]').innerHTML = config.onboardingSteps.map(onboardingCard).join('');
+  $('[data-sites]').innerHTML = config.recommendedSites.map(cardLink).join('');
+  $('[data-community-links]').innerHTML = config.communityLinks.map(cardLinkMinimal).join('');
 
   $('[data-why-cards]').innerHTML = config.whyCards
     .map(
