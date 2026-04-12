@@ -282,8 +282,7 @@ a {
   margin-bottom: 0.75rem;
 }
 
-.hero__sub,
-.hero__note {
+.hero__sub {
   max-width: 64ch;
 }
 
@@ -298,8 +297,22 @@ a {
   align-items: center;
 }
 
-.hero__note {
-  font-size: 0.9rem;
+.code-copy-unit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.45rem;
+  background: color-mix(in srgb, var(--bg-soft) 74%, transparent);
+}
+
+.code-copy-unit__code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: var(--text);
+  padding-inline: 0.35rem;
 }
 
 .panel {
@@ -413,6 +426,39 @@ a {
 
 .content-card--wide {
   grid-column: span 2;
+}
+
+.step-card {
+  display: grid;
+  gap: 0.45rem;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 78%, var(--accent));
+  background: color-mix(in srgb, var(--bg-soft) 72%, transparent);
+  transition: 0.2s ease;
+}
+
+.step-card__index {
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.step-card__title {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.step-card__hint {
+  font-size: 0.86rem;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+  box-shadow: 0 12px 22px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .link-card {
@@ -588,6 +634,20 @@ a {
 
   .cta-group .btn {
     width: 100%;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .code-copy-unit {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .code-copy-unit .btn {
+    flex: 1;
   }
 
   .hero {
