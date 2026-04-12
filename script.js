@@ -6,37 +6,76 @@ const config = {
   referralCode: 'STAR-9BBJ-ZKJV',
   referralUrl: 'https://www.robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV',
 
-  defaultTheme: 'stanton',
-  themes: [
-    { key: 'grimex', label: 'Grimex' },
-    { key: 'pyro', label: 'Pyro' },
-    { key: 'stanton', label: 'Stanton' },
-  ],
-
   // Hero copy.
   heroHeadline: 'Want to get into Star Citizen PvP? Start smart.',
   heroSubheadline: 'Use the referral step before account creation, then follow the action path below.',
 
   onboardingIntro:
-    'Why this referral step matters: using the referral code first keeps your account setup in the correct referral path before signup. Follow these actions in order.',
+    'Using the referral code first keeps your account setup in the correct path before signup. Follow these steps in order for the cleanest start.',
 
   onboardingSteps: [
     {
       title: 'Create account',
       url: 'https://robertsspaceindustries.com/en/enlist?jumpto=%2Fen%2Fstar-citizen%2Fplay-star-citizen',
+      cta: 'Open page',
     },
     {
       title: 'Get a starter package',
       url: 'https://robertsspaceindustries.com/en/store/pledge/browse/game-packages',
+      cta: 'Visit page',
     },
     {
       title: 'Join active community and find the right organisation for you',
+      note: 'Do this after the first two steps',
     },
     {
       title: 'Join an organisation',
       url: 'https://robertsspaceindustries.com/en/community/orgs',
+      cta: 'Continue',
     },
   ],
+
+  toolsIntro:
+    'Use these sites to learn ships, compare data, track economy, and avoid wasting money on the wrong upgrades.',
+
+  recommendedSites: {
+    featured: [
+      {
+        name: 'Erkul',
+        url: 'https://www.erkul.games/live/calculator',
+        description: 'Ship loadouts, components, power, and EM/IR tuning for practical combat setups.',
+      },
+      {
+        name: 'SPViewer',
+        url: 'https://www.spviewer.eu/',
+        description: 'Clean ship stats, signatures, and comparisons to choose the right platform faster.',
+      },
+    ],
+    economy: [
+      {
+        name: 'Star Citizen Mining Helper Tool',
+        url: 'https://regolith.rocks/',
+        description: 'Mining helper and resource planning across ores, refinement, and route choices.',
+      },
+      {
+        name: 'Star Citizen aUEC Trading Platform',
+        url: 'https://uexcorp.space/',
+        description: 'Trading, commodities, routes, and economy tools for efficient earning runs.',
+      },
+      {
+        name: 'Star Citizen Money Saving Guide and CCU Game',
+        url: 'https://ccugame.app/your-items/fleet',
+        description: 'Money-saving fleet strategy and CCU planning before buying ships.',
+      },
+    ],
+    reference: [
+      {
+        name: 'Star Citizen Wiki',
+        url: 'https://starcitizen.tools/',
+        description: 'General game reference for systems, ships, locations, and mechanics.',
+      },
+    ],
+  },
 
   communityIntro:
     'Find active players, PvP communities, official channels, and organisations to run with regularly.',
@@ -48,39 +87,6 @@ const config = {
     { name: 'Star Citizen Official Discord', url: 'https://discord.gg/starcitizen' },
     { name: 'Star Citizen Pipe Line and Front Line Info', url: 'https://discord.gg/nfYaXDhj' },
     { name: 'Star Citizen Esports Community', url: 'https://discord.gg/atmoesports' },
-  ],
-
-  recommendedSites: [
-    {
-      name: 'Erkul',
-      url: 'https://www.erkul.games/live/calculator',
-      description: 'Ship loadouts, components, power, EM/IR',
-    },
-    {
-      name: 'SPViewer',
-      url: 'https://www.spviewer.eu/',
-      description: 'Ship stats, signatures, comparisons',
-    },
-    {
-      name: 'Star Citizen Wiki',
-      url: 'https://starcitizen.tools/',
-      description: 'General game knowledge and reference',
-    },
-    {
-      name: 'Star Citizen Mining Helper Tool',
-      url: 'https://regolith.rocks/',
-      description: 'Mining helper and resource tool',
-    },
-    {
-      name: 'Star Citizen aUEC Trading Platform',
-      url: 'https://uexcorp.space/',
-      description: 'Trading, commodities, routes and economy tools',
-    },
-    {
-      name: 'Star Citizen Money Saving Guide and CCU Game',
-      url: 'https://ccugame.app/your-items/fleet',
-      description: 'Fleet saving strategy and CCU planning',
-    },
   ],
 
   whyCards: [
@@ -152,19 +158,20 @@ function renderStaticText() {
   $('[data-hero-headline]').textContent = config.heroHeadline;
   $('[data-hero-subheadline]').textContent = config.heroSubheadline;
   $('[data-onboarding-intro]').textContent = config.onboardingIntro;
+  $('[data-tools-intro]').textContent = config.toolsIntro;
   $('[data-community-intro]').textContent = config.communityIntro;
 }
 
-function cardLink(item) {
+function toolCard(item, featured = false) {
   return `
-    <a class="link-card" href="${item.url}" target="_blank" rel="noopener noreferrer">
+    <a class="link-card ${featured ? 'link-card--featured' : ''}" href="${item.url}" target="_blank" rel="noopener noreferrer">
       <strong>${item.name}</strong>
       <span>${item.description}</span>
     </a>
   `;
 }
 
-function cardLinkMinimal(item) {
+function communityCard(item) {
   return `
     <a class="link-card" href="${item.url}" target="_blank" rel="noopener noreferrer">
       <strong>${item.name}</strong>
@@ -173,10 +180,14 @@ function cardLinkMinimal(item) {
 }
 
 function onboardingCard(step, index) {
+  const hint = step.url
+    ? `<span class="step-card__hint">${step.cta || 'Open page'}</span>`
+    : `<span class="step-card__hint step-card__hint--note">${step.note || 'Do this after the first two steps'}</span>`;
+
   const body = `
     <span class="step-card__index">Step ${index + 1}</span>
     <span class="step-card__title">${step.title}</span>
-    ${step.url ? '<span class="step-card__hint">Open link</span>' : '<span class="step-card__hint">Continue after the first two steps</span>'}
+    ${hint}
   `;
 
   if (step.url) {
@@ -196,8 +207,10 @@ function onboardingCard(step, index) {
 
 function renderCollections() {
   $('[data-onboarding-steps]').innerHTML = config.onboardingSteps.map(onboardingCard).join('');
-  $('[data-sites]').innerHTML = config.recommendedSites.map(cardLink).join('');
-  $('[data-community-links]').innerHTML = config.communityLinks.map(cardLinkMinimal).join('');
+  $('[data-sites-featured]').innerHTML = config.recommendedSites.featured.map((item) => toolCard(item, true)).join('');
+  $('[data-sites-economy]').innerHTML = config.recommendedSites.economy.map((item) => toolCard(item)).join('');
+  $('[data-sites-reference]').innerHTML = config.recommendedSites.reference.map((item) => toolCard(item)).join('');
+  $('[data-community-links]').innerHTML = config.communityLinks.map(communityCard).join('');
 
   $('[data-why-cards]').innerHTML = config.whyCards
     .map(
@@ -227,27 +240,6 @@ function renderCollections() {
       return `<a href="${link.href}" ${attrs}>${link.label}</a>`;
     })
     .join('');
-}
-
-function setupThemeSelector() {
-  const themeSelect = $('[data-theme-select]');
-  if (!themeSelect) return;
-
-  themeSelect.innerHTML = config.themes
-    .map((theme) => `<option value="${theme.key}">${theme.label}</option>`)
-    .join('');
-
-  const savedTheme = localStorage.getItem('scgg-theme');
-  const activeTheme = config.themes.some((theme) => theme.key === savedTheme) ? savedTheme : config.defaultTheme;
-
-  document.body.setAttribute('data-theme', activeTheme);
-  themeSelect.value = activeTheme;
-
-  themeSelect.addEventListener('change', () => {
-    const selected = themeSelect.value;
-    document.body.setAttribute('data-theme', selected);
-    localStorage.setItem('scgg-theme', selected);
-  });
 }
 
 async function copyCode(button) {
@@ -313,7 +305,6 @@ function setupReveal() {
 
 renderStaticText();
 renderCollections();
-setupThemeSelector();
 setupCopyButtons();
 setupCodeStatus();
 setupReveal();
